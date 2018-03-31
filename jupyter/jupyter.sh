@@ -32,12 +32,12 @@ source /etc/profile.d/conda.sh
 
 if [ -n "${JUPYTER_CONDA_CHANNELS}" ]; then
   echo "Adding custom conda channels '${JUPYTER_CONDA_CHANNELS//:/ }'"
-  conda config --add channels "${JUPYTER_CONDA_CHANNELS//:/,}"
+  conda config --add channels ${JUPYTER_CONDA_CHANNELS//:/,}
 fi
 
 if [ -n "${JUPYTER_CONDA_PACKAGES}" ]; then
-  echo "Installing custom conda packages '${JUPYTER_CONDA_PACKAGES/:/ })'"
-  conda install "${JUPYTER_CONDA_PACKAGES//:/ }"
+  echo "Installing custom conda packages '${JUPYTER_CONDA_PACKAGES//:/ })'"
+  conda install ${JUPYTER_CONDA_PACKAGES//:/ }
 fi
 
 if [[ "${ROLE}" == 'Master' ]]; then
